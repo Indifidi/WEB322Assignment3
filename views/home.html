@@ -1,6 +1,9 @@
+ <!-- Webpage for home -->
+
 <!DOCTYPE html>
 <html lang="en">
 
+ <!-- Header -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +11,7 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
+ <!-- Hero Section -->
 <body>
     <div class="container mx-auto">
         <div class="hero bg-base-200">
@@ -28,6 +32,7 @@
                     <li><a href="/about">about</a></li>
                     <li>
                         <details>
+                             <!-- Dropdown menu section for selecting sectors-->
                             <summary>Summary Sector</summary>
                             <ul class="p-2 bg-base-100 right-0">
                                 <li><button class="btn" onclick="getProjects('Electricity')">Electricity</button></li>
@@ -47,8 +52,9 @@
         </div>
     </div>
 </body>
+ <!-- Card Section -->
 <script>
-
+    // Create and insert a project card into the DOM
     function populateProjects(project) {
         const projectsDiv = document.getElementById('projects');
         const card = document.createElement('div');
@@ -72,6 +78,7 @@
         projectsDiv.appendChild(card);
 
     }
+    // fetching projects by sector
     async function getProjects(sector) {
         const projectsDiv = document.getElementById('projects');
         try {
@@ -85,7 +92,7 @@
             // Clear previous projects
             projectsDiv.innerHTML = '';
 
-            // Assuming data is an array of projects, you can process it as needed
+            // If data is an array of projects, process as needed
             // loop through the projects and display them
             if (data.length === 0) {
                 // If no projects found, display a message  
