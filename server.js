@@ -31,10 +31,6 @@ app.get("/about", (request, response) => {
   response.sendFile(path.join(__dirname, "views", "about.html"));
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
-
-});
 
 app.get("/solutions/projects/", (req, res) => {
     res.setHeader("Content-Type", "application/json");
@@ -68,7 +64,9 @@ app.get("/solutions/projects/:id", (req, res) => {
         });
 });
 
- 
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+});
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
