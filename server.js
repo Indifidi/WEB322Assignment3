@@ -31,7 +31,6 @@ app.get("/about", (request, response) => {
   response.sendFile(path.join(__dirname, "views", "about.html"));
 });
 
-
 app.get("/solutions/projects/", (req, res) => {
     res.setHeader("Content-Type", "application/json");
     if (!req.query.sector) {
@@ -62,10 +61,6 @@ app.get("/solutions/projects/:id", (req, res) => {
         .catch((error) => {
              res.sendFile(path.join(__dirname, "views", "404.html"));
         });
-});
-
-app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
 
 app.listen(port, () => {
