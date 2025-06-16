@@ -1,0 +1,25 @@
+{
+  "name": "show",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "tw:build": "tailwindcss build -i ./public/css/tailwind.css -o ./public/css/main.css --watch",
+    "build": "tailwindcss build -i ./public/css/tailwind.css -o ./public/css/main.css"
+  },
+  "keywords": ["tailwind", "vercel", "fetch API", "daisyui", "express", "node"],
+  "author": "Daniel Kim",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "daisyui": "^4.12.24"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
