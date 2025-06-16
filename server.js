@@ -63,6 +63,10 @@ app.get("/solutions/projects/:id", (req, res) => {
         });
 });
 
+app.use((request, response) => {
+  response.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+});
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
